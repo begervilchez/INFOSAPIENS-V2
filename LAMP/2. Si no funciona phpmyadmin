@@ -1,0 +1,10 @@
+NOTA: si no funciona el phpmyadmin hacer esto
+
+hay que editar:
+/etc/apache2/apache2.conf
+agregando:
+Include /etc/phpmyadmin/apache.conf
+
+sudo service apache2 reload
+
+

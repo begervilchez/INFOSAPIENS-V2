@@ -1,0 +1,23 @@
+1.Para enlazar una carpeta por ejemplo www en home
+	- creamos la carpeta www en home/usuario/
+	- sudo nano /etc/apache2/sites-available/default
+	- aparecera
+
+	<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+
+        DocumentRoot /home/beger/www  <<<<<<<<<<<<<<<<<<<<<<<AQUI MODIFICAR
+                <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /home/beger/www/> <<<<<<<<<<<<<<<<<<<<<<<<<AQUI MODIFICAR
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+2. Reiniciamos el apache con sudo /etc/init.d/apache2 restart
+
+
+

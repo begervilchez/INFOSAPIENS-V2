@@ -1,0 +1,56 @@
+1. Tener instalado git en nuestro linux 
+	sudo apt-get install git-core
+
+2. Configurar lo esencial en nuestro linux
+	git config --global user.name "Your Name Here"
+	git config --global user.email "your_email@youremail.com"
+	
+  * Sino se quiere que siempre pida ussername y password por una hora:
+	git config --global credential.helper cache
+	git config --global credential.helper 'cache --timeout=3600'
+
+3. En GITHUB crear un repositorio por ejemplo PruebaGit
+
+4. En la terminal crear o entrar en la carpeta para asociarlo con git
+	touch README.md (la carpeta ya puede tener otros archivos o carpetas)
+	git init
+	git remote add origin https://github.com/begersummum/PruebaGit.git
+	git status (para conocer las carpetas a subir, usar git status -s para short)
+	git add . (añade todo. Tambien usar git add NombreArchivo)
+	git commit -m "mensaje" (marcamos todos los archivos agregados para subir)
+	git push -u origin master (Esto en la primera vez)   
+ 
+5. Si modificamos algo en el repositorio podemos actualizarlo en el nuestro con:
+	git pull
+ 
+6. Si creamos otra carpeta para alojar nuestro proyecto, o si queremos bajar un proyecto que no sea nuestro simplemente hay que clonarlo:
+	mkdir prueba2
+	git clone https://github.com/javiereguiluz/sfprueba.git prueba2
+ 
+  *Si es nuestro proyecto bajado de nuestro repositorio, podremos realizar git push sin problemas.
+  *Si no es nuestro proyecto, no podremos hacer git push, a lo cual repetiremos el paso 4.
+
+7. Gitignore:Dentro de la carpeta donde esta .git, hay que crear un archivo .gitignore
+	# archivos que genera localmente Symfony2 para mejorar el rendimiento
+	app/bootstrap.php.cache
+	app/bootstrap_cache.php.cache
+	# directorio con todos los archivos de caché (muchísimos archivos)
+	app/cache/*
+	# directorio con los archivos de log (pocos archivos pero muy grandes)
+	app/logs/*
+	# directorio con todos los componentes y librerías de Symfony2
+	vendor/*
+	# directorios donde Symfony2 vuelca todos los archivos web públicos
+	web/bundles/*
+	web/css/*
+	web/js/*
+	# archivos creados por los IDEs Eclipse, Zend Studio, Netbeans, PHPStorm y
+	TextMate2
+	.buildpath
+	.project
+	.settings
+	nbproject
+	.idea
+	.tm_properties
+ 
+
